@@ -1,0 +1,40 @@
+kind: pipeline
+name: prepare-and-push-to-private-repo
+
+steps:
+  - name: test
+    image: node:16
+    commands:
+    - npm install
+    - npm test
+
+  - name: sonarqube
+    image: elanis/drone-sonar-plugin-shellcheck
+    settings:
+      sonar_host: 
+        from_secret: SONAR_HOST
+      sonar_token: 
+        from_secret: SONAR_TOKEN
+
+  - name: update-version
+    image: node:16
+    commands:
+    - sed -i 's/"1.0.0"/"${DRONE_TAG}"/g' package.json
+    when:
+      event:
+      - tag
+
+  - name: push
+    image: plugins/npm
+    settings:
+      username:
+        from_secret: npm_username
+      password:
+        from_secret: npm_password
+      email: **REMOVED**
+      token:
+        from_secret: npm_token
+      registry: "**REMOVED**"
+    when:
+      event:
+      - tag

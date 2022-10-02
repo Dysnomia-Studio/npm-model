@@ -1,0 +1,25 @@
+{
+  "name": "@dysnomia/npm-private-model",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No test specified\"",
+    "test-disabled": "c8 -r lcov -r text npm run tests",
+    "tests": "mocha *.spec.js --color"
+  },
+  "author": "Dysnomia",
+  "license": "Proprietary",
+  "devDependencies": {
+    "c8": "^7.11.3",
+    "mocha": "^10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitea:elanis/npm-private-model.git"
+  },
+  "description": "Model for Dysnomia node package repositories.",
+  "publishConfig": {
+    "registry": "http://npm-repo:4873"
+  }
+}
