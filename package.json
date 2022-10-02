@@ -1,6 +1,7 @@
 {
-  "name": "@dysnomia/npm-private-model",
+  "name": "@dysnomia-studio/npm-model",
   "version": "1.0.0",
+  "description": "Model for Dysnomia node package repositories.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -11,15 +12,14 @@
   "author": "Dysnomia",
   "license": "Proprietary",
   "devDependencies": {
-    "c8": "^7.11.3",
+    "c8": "^7.12.0",
     "mocha": "^10.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git@gitea:elanis/npm-private-model.git"
+    "url": "git@github.com:Dysnomia-Studio/npm-model.git"
   },
-  "description": "Model for Dysnomia node package repositories.",
   "publishConfig": {
-    "registry": "http://npm-repo:4873"
+    "registry": "https://npm.pkg.github.com/"
   }
 }
