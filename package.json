@@ -13,7 +13,7 @@
   "license": "Proprietary",
   "devDependencies": {
     "c8": "^9.1.0",
-    "mocha": "^10.3.0"
+    "mocha": "^10.4.0"
   },
   "repository": {
     "type": "git",
